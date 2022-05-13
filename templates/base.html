@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="ИТ-разработки, Мобильные приложения, Вебсайты, Автоматизация бизнеса">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static '/data/img/favicon.ico' %}" type="image/x-icon">
+    <title>ITUnisoft - IT решения для вашего бизнеса</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css"> -->
+    <link rel="stylesheet" href="{% static 'data/css/style.css' %}">
+</head>
+
+<body>
+
+    {% include 'snippets/header.html' %}
+        {% block content %}
+
+        {% endblock %}
+    {% include 'snippets/footer.html' %}
+
+
+
+    <div id="modal_form" class="modal-form">
+        <div class="modal-body" id="modal_body">
+            <h1 class="modal-title">Loyihangizga buyurtma bering</h1>
+            <form action="" class="modal-inputs">
+                <input type="text" placeholder="To'liq ismingiz">
+                <input type="text" id="phone-number" placeholder="Telefon raqami">
+                <input type="email" placeholder="Elektron pochta">
+                <textarea name="" id="" placeholder="Xabar"></textarea>
+                <button type="submit" class="button-style">Yuborish</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.1.62/jquery.inputmask.bundle.js"></script>
+    <script src="{% static 'data/js/viewportchecker.js' %}"></script>
+    <script src="{% static 'data/js/index.js' %}"></script>
+</body>
+
+</html>
