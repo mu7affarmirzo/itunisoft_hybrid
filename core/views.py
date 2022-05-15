@@ -1,9 +1,42 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, DetailView
 from core.models.portfolio import *
 from core.models.services import *
 from core.models.home import *
-# Create your views here.
+from core.models.about import *
+
+
+class PortfolioDetailView(DetailView):
+    model = PortfolioModel
+    template_name = 'core_pages/portfolio-detail.html'
+    context_object_name = 'object'
+
+
+def portfolio_page(request):
+    portfolios = PortfolioModel.objects.all()[:6]
+
+    context = {
+        'portfolios': portfolios,
+
+    }
+    return render(request, 'core_pages/portfolio.html', context)
+
+
+
+def about_us_page(request):
+    informations = AboutInfoModel.objects.all()
+    certificates = CertificatesModel.objects.all()
+    categories = PartnerCategoryModel.objects.all()
+    partners = PartnersModel.objects.all()
+
+    context = {
+        'informations': informations,
+        'certificates': certificates,
+        'categories': categories,
+        'partners': partners,
+    }
+
+    return render(request, 'core_pages/about.html', context)
 
 
 def main_page(request):
@@ -46,7 +79,7 @@ def main_page(request):
 
     }
 
-    return render(request,'core_pages/home.html', context)
+    return render(request, 'core_pages/home.html', context)
 
 
 class MainView(TemplateView):

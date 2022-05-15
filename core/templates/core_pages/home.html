@@ -22,9 +22,9 @@
                 <i class="fa fa-times"></i>
             </button>
             <ul class="nav-list nav-list-center">
-                <li><a href="about.html">Biz haqimizda</a></li>
+                <li><a href="{% url 'core:about us' %}">Biz haqimizda</a></li>
                 <li><a href="#services-section">Xizmatlar</a></li>
-                <li><a href="portfolio.html">Loyihalarimiz</a></li>
+                <li><a href="{% url 'core:portfolio' %}">Loyihalarimiz</a></li>
                 <li><a href="#partners">Mijozlar</a></li>
                 <li><a href="contacts.html">Bog'lanish</a></li>
                 <li><a href="vacancy.html">Vakansiya</a></li>
@@ -250,8 +250,8 @@
                     </div>
                     <div class="left-big">
                         <a href="">
-                            <img src="{{portfolios6.imageURL}}" alt="">
-                            <span>{{ portfolios6.title }}</span>
+                            <img src="{{services6.imageURL}}" alt="">
+                            <span>{{ services6.title }}</span>
                         </a>
                     </div>
                 </div>
@@ -282,7 +282,7 @@
                 <p class="section-text about_animation invisible">Biz asosiy e'tiborni qiymat keltirishga va biznesning
                     <br> asosiy muammolarini hal qilishga qaratamiz
                 </p>
-                <a href="portfolio.html" class="about_animation invisible button-style">Barchasini ko'rish</a>
+                <a href="{% url 'core:portfolio' %}" class="about_animation invisible button-style">Barchasini ko'rish</a>
             </div>
             <div class="portfolio-grid">
                 <div class="grid-items about_animation invisible">

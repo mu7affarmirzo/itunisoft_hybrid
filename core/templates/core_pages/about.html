@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <section class="about padding-150">
+        <div class="about-inner mt-50">
+            <div class="breadcrumb-with-title">
+                <h1 class="section-big-text">Biz haqimizda</h1>
+                <p> <a href="{% url 'core:home' %}">Bosh sahifa </a> / Biz haqimizda</p>
+            </div>
+            {% for info in informations %}
+                <h1 class="inner-section-title">{{ info.title}}</h1>
+                <p>{{ info.body|safe }}</p>
+            {% endfor %}
+
+
+            <h1 class="inner-section-title">Bizning mijozlarimiz</h1>
+
+        <div id="tabs">
+            <ul>
+                {% for category in categories %}
+                <li><a href="#tabs-{{ forloop.counter }}">{{ category.name}}</a></li>
+                {% endfor %}
+
+            </ul>
+            {% for category in categories %}
+                <div id="tabs-{{ forloop.counter }}" class="partners-grid">
+                    {% for partner in partners %}
+                        {% if partner.category == category %}
+                            <img src="{{partner.imageURL}}" alt="">
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
+
+
+        <h1 class="inner-section-title">Sertifikatlar va litsenziyalar</h1>
+        <div class="about-certificates">
+            {% for certificate in certificates %}
+                <img src="{{ certificate.imageURL }}" alt="">
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% endblock %}

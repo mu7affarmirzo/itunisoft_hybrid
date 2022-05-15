@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+    <section class="portfolios padding-150">
+        <div class="portfolios-inner mt-50">
+            <div class="breadcrumb-with-title">
+                <h1 class="section-big-text">Bizning loyihalar</h1>
+                <p> <a href="{% url 'core:home' %}">Bosh sahifa </a> / Loyihalarimiz</p>
+            </div>
+            <div class="portfolio-grid">
+                <div class="grid-items about_animation invisible">
+
+                    {% for portfolio in portfolios %}
+                        <a href="{% url 'core:portfolio-detail' portfolio.id  %}">
+                            <img src="{{ portfolio.imageURL}}" alt="">
+                            <span>{{ portfolio.title}}</span>
+                        </a>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

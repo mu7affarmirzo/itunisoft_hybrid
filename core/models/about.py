@@ -28,5 +28,14 @@ class CertificatesModel(models.Model):
     title = models.CharField(max_length=255, null=True, blank=True)
     img = models.ImageField(upload_to=upload_location, blank=True, null=True)
 
+    @property
+    def imageURL(self):
+        try:
+            url = str(self.img.url)
+        except:
+            url = ''
+
+        return url
+
     def __str__(self):
         return str(self.title)
