@@ -80,3 +80,16 @@ class AboutInfoAdmin(AboutInfoCustomAdmin, TranslationAdmin):
 
 
 admin.site.register(about.CertificatesModel)
+admin.site.register(services.ProjectFormModel)
+
+
+class VacancyCustomAdmin(admin.ModelAdmin):
+    list_display = ('title_uz', 'title_en', 'title_ru')
+
+    class Meta:
+        verbose_name = "Vacancy"
+
+
+@admin.register(about.VacancyModel)
+class VacancyAdmin(VacancyCustomAdmin, TranslationAdmin):
+    pass

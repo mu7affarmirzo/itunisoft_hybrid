@@ -16,7 +16,7 @@
 
 <body>
     <nav class="nav padding-150">
-        <a href="index.html" class="logo"><img src="{% static 'data/img/logo-dark.svg' %}" alt=""></a>
+        <a href="{% url 'core:home' %}" class="logo"><img src="{% static 'data/img/logo-dark.svg' %}" alt=""></a>
         <div class="nav-collapse" id="nav-collapse">
             <button class="close_menu">
                 <i class="fa fa-times"></i>
@@ -26,8 +26,8 @@
                 <li><a href="#services-section">Xizmatlar</a></li>
                 <li><a href="{% url 'core:portfolio' %}">Loyihalarimiz</a></li>
                 <li><a href="#partners">Mijozlar</a></li>
-                <li><a href="contacts.html">Bog'lanish</a></li>
-                <li><a href="vacancy.html">Vakansiya</a></li>
+                <li><a href="{% url 'core:contacts' %}">Bog'lanish</a></li>
+                <li><a href="{% url 'core:vacancies' %}">Vakansiya</a></li>
             </ul>
             <ul class="nav-list nav-list-right">
                 <li>
@@ -220,17 +220,17 @@
 
                 <div class="left">
                         <div class="left-big">
-                            <a href="">
+                            <a href="#">
                                 <img src="{{services1.imageURL}}" alt="">
                                 <span>{{ services1.title}}</span>
                             </a>
                         </div>
                         <div class="left-row">
-                            <a href="">
+                            <a href="#">
                                 <img src="{{services2.imageURL}}" alt="">
                                 <span>{{ services2.title}}</span>
                             </a>
-                            <a href="">
+                            <a href="#">
                                 <img src="{{services3.imageURL}}" alt="">
                                 <span>{{ services3.title }}</span>
                             </a>
@@ -239,17 +239,17 @@
 
                 <div class="right">
                     <div class="left-row">
-                        <a href="">
+                        <a href="#">
                             <img src="{{services4.imageURL}}" alt="">
                             <span>{{ services4.title}}</span>
                         </a>
-                        <a href="">
+                        <a href="#">
                             <img src="{{services5.imageURL}}" alt="">
                             <span>{{ services5.title}}</span>
                         </a>
                     </div>
                     <div class="left-big">
-                        <a href="">
+                        <a href="#">
                             <img src="{{services6.imageURL}}" alt="">
                             <span>{{ services6.title }}</span>
                         </a>
@@ -289,17 +289,17 @@
 
                     <div class="left">
                         <div class="left-big">
-                            <a href="">
+                            <a href="{% url 'core:portfolio-detail' portfolios1.id %}">
                                 <img src="{{portfolios1.imageURL}}" alt="">
                                 <span>{{ portfolios1.title}}</span>
                             </a>
                         </div>
                         <div class="left-row">
-                            <a href="">
+                            <a href="{% url 'core:portfolio-detail' portfolios2.id %}">
                                 <img src="{{portfolios2.imageURL}}" alt="">
                                 <span>{{ portfolios2.title}}</span>
                             </a>
-                            <a href="">
+                            <a href="{% url 'core:portfolio-detail' portfolios3.id %}">
                                 <img src="{{portfolios3.imageURL}}" alt="">
                                 <span>{{ portfolios3.title }}</span>
                             </a>
@@ -308,17 +308,17 @@
 
                     <div class="right">
                         <div class="left-row">
-                            <a href="">
+                            <a href="{% url 'core:portfolio-detail' portfolios4.id %}">
                                 <img src="{{portfolios4.imageURL}}" alt="">
                                 <span>{{ portfolios4.title}}</span>
                             </a>
-                            <a href="">
+                            <a href="{% url 'core:portfolio-detail' portfolios5.id %}">
                                 <img src="{{portfolios5.imageURL}}" alt="">
                                 <span>{{ portfolios5.title}}</span>
                             </a>
                         </div>
                         <div class="left-big">
-                            <a href="">
+                            <a href="{% url 'core:portfolio-detail' portfolios6.id %}">
                                 <img src="{{portfolios6.imageURL}}" alt="">
                                 <span>{{ portfolios6.title }}</span>
                             </a>
@@ -423,11 +423,14 @@
     <div id="modal_form" class="modal-form">
         <div class="modal-body" id="modal_body">
             <h1 class="modal-title">Loyihangizga buyurtma bering</h1>
-            <form action="" class="modal-inputs">
-                <input type="text" placeholder="To'liq ismingiz">
-                <input type="text" id="phone-number" placeholder="Telefon raqami">
-                <input type="email" placeholder="Elektron pochta">
-                <textarea name="" id="" placeholder="Xabar"></textarea>
+            <form action="{% url 'core:home' %}" class="modal-inputs" method="post">
+                {% csrf_token %}
+{#                <p>{{ form.as_p }}</p>#}
+{##}
+                <input name="full_name" type="text" placeholder="To'liq ismingiz">
+                <input name="phone_number" type="text" id="phone-number" placeholder="Telefon raqami">
+                <input name="email" type="email" placeholder="Elektron pochta">
+                <textarea name="message" id="" placeholder="Xabar"></textarea>
                 <button type="submit" class="button-style">Yuborish</button>
             </form>
         </div>

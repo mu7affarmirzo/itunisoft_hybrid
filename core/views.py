@@ -1,15 +1,26 @@
-from django.shortcuts import render
-from django.views.generic import TemplateView, DetailView
+from django.shortcuts import render, redirect
+from django.views.generic import TemplateView, DetailView, ListView
+
+from core.forms import ProjectForm
 from core.models.portfolio import *
 from core.models.services import *
 from core.models.home import *
 from core.models.about import *
 
 
+class VacanciesView(ListView):
+    model = VacancyModel
+    template_name = 'core_pages/vacancy.html'
+    context_object_name = 'vacancies'
+
+
+class ContactUsView(TemplateView):
+    template_name = 'core_pages/contact-us.html'
+
+
 class PortfolioDetailView(DetailView):
     model = PortfolioModel
     template_name = 'core_pages/portfolio-detail.html'
-    context_object_name = 'object'
 
 
 def portfolio_page(request):
@@ -20,7 +31,6 @@ def portfolio_page(request):
 
     }
     return render(request, 'core_pages/portfolio.html', context)
-
 
 
 def about_us_page(request):
@@ -79,8 +89,28 @@ def main_page(request):
 
     }
 
+    if request.method == 'POST':
+        form = ProjectForm(request.POST or None, request.FILES or None)
+        if form.is_valid():
+            obj = form.save(commit=False)
+            obj.save()
+            form = ProjectForm()
+            return redirect('core:home')
+        context['form'] = form
+
     return render(request, 'core_pages/home.html', context)
 
+#
+def project_form_view(request):
+    context = {}
+    print('Hello')
+    if request.method == 'POST':
+        form = ProjectForm(request.POST or None, request.FILES or None)
+        if form.is_valid():
+            obj = form.save(commit=False)
+            obj.save()
+            form = ProjectForm()
+            return redirect('core:home')
+        context['form'] = form
 
-class MainView(TemplateView):
-    template_name = 'core_pages/index.html'
+    return render(request, 'core_pages/home.html', context)

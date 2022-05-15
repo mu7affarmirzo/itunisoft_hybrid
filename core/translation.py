@@ -33,3 +33,8 @@ class ServiceTranslationOptions(TranslationOptions):
 @register(AboutInfoModel)
 class AboutInfoTranslationOptions(TranslationOptions):
     fields = ('title', )
+
+
+@register(VacancyModel)
+class VacancyTranslationOptions(TranslationOptions):
+    fields = ('title', 'body')
