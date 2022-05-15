@@ -1,5 +1,6 @@
 from uuid import uuid4
 
+from ckeditor.fields import RichTextField
 from django.db import models
 from django.db.models.signals import post_save
 from django.dispatch import receiver
@@ -13,6 +14,30 @@ def upload_location(instance, filename):
         filename='{}.{}'.format(uuid4().hex, ext)
     )
     return file_path
+
+
+class PartnerCategoryModel(models.Model):
+    name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return str(self.name)
+
+
+class PartnersModel(models.Model):
+    img = models.ImageField(upload_to=upload_location, blank=True, null=True)
+    category = models.ForeignKey(PartnerCategoryModel, related_name='partners', on_delete=models.SET_NULL, null=True)
+
+    @property
+    def imageURL(self):
+        try:
+            url = str(self.img.url)
+        except:
+            url = ''
+
+        return url
+
+    def __str__(self):
+        return str(self.category.name)
 
 
 class CarouselModel(models.Model):
@@ -42,9 +67,9 @@ class StatsModel(models.Model):
 
 class InfoPageModel(models.Model):
     image = models.ImageField(upload_to=upload_location, blank=True, null=True)
-    title = models.CharField(max_length=255)
-    body = models.TextField()
-    slug = models.SlugField(unique=True, blank=True, null=True)
+    title = models.CharField(max_length=255, null=True, blank=True)
+    body = RichTextField()
+    slug = models.SlugField(unique=True, blank=True)
 
     @property
     def imageURL(self):

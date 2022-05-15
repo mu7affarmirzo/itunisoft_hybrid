@@ -7,16 +7,42 @@ from core.models.home import *
 
 
 def main_page(request):
-    carousel = CarouselModel.objects.all()
     stats = StatsModel.objects.all()
-    services = ServicesModel.objects.all()
-    portfolios = PortfolioModel.objects.all()
+    categories = PartnerCategoryModel.objects.all()
+    partners = PartnersModel.objects.all()
+
+    services1 = ServicesModel.objects.all()[0]
+    services2 = ServicesModel.objects.all()[1]
+    services3 = ServicesModel.objects.all()[2]
+    services4 = ServicesModel.objects.all()[3]
+    services5 = ServicesModel.objects.all()[4]
+    services6 = ServicesModel.objects.all()[5]
+
+    portfolios1 = PortfolioModel.objects.all()[0]
+    portfolios2 = PortfolioModel.objects.all()[1]
+    portfolios3 = PortfolioModel.objects.all()[2]
+    portfolios4 = PortfolioModel.objects.all()[3]
+    portfolios5 = PortfolioModel.objects.all()[4]
+    portfolios6 = PortfolioModel.objects.all()[5]
 
     context = {
-        'carousel': carousel,
         'stats': stats,
-        'services': services,
-        'portfolios': portfolios
+        'categories': categories,
+        'partners': partners,
+
+        'services1': services1,
+        'services2': services2,
+        'services3': services3,
+        'services4': services4,
+        'services5': services5,
+        'services6': services6,
+
+        'portfolios1': portfolios1,
+        'portfolios2': portfolios2,
+        'portfolios3': portfolios3,
+        'portfolios4': portfolios4,
+        'portfolios5': portfolios5,
+        'portfolios6': portfolios6,
 
     }
 
