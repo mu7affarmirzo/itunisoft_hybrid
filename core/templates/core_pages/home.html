@@ -425,8 +425,6 @@
             <h1 class="modal-title">Loyihangizga buyurtma bering</h1>
             <form action="{% url 'core:home' %}" class="modal-inputs" method="post">
                 {% csrf_token %}
-{#                <p>{{ form.as_p }}</p>#}
-{##}
                 <input name="full_name" type="text" placeholder="To'liq ismingiz">
                 <input name="phone_number" type="text" id="phone-number" placeholder="Telefon raqami">
                 <input name="email" type="email" placeholder="Elektron pochta">
