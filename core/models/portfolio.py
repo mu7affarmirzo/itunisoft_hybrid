@@ -18,3 +18,7 @@ class PortfolioModel(models.Model):
 
     def __str__(self):
         return str(self.title)
+
+    class Meta:
+        verbose_name = 'Bizning loyihalarimiz'
+        verbose_name_plural = 'Bizning loyihalarimiz'

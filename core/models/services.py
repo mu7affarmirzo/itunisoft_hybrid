@@ -19,8 +19,8 @@ class ServicesModel(models.Model):
         return str(self.title)
 
     class Meta:
-        verbose_name = 'Our services'
-        verbose_name_plural = 'Our services'
+        verbose_name = 'Bizning xizmatlar'
+        verbose_name_plural = 'Bizning xizmatlar'
 
 
 class ProjectFormModel(models.Model):
@@ -31,3 +31,7 @@ class ProjectFormModel(models.Model):
 
     def __str__(self):
         return str(self.full_name)
+
+    class Meta:
+        verbose_name = 'Qoldirilgan arizalar'
+        verbose_name_plural = 'Qoldirilgan arizalar'

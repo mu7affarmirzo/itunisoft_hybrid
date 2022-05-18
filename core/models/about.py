@@ -20,8 +20,8 @@ class AboutInfoModel(models.Model):
         return str(self.title)
 
     class Meta:
-        verbose_name = 'About Us'
-        verbose_name_plural = 'About Us'
+        verbose_name = 'Biz haqimizda'
+        verbose_name_plural = 'Biz haqimizda'
 
 
 class CertificatesModel(models.Model):
@@ -40,6 +40,10 @@ class CertificatesModel(models.Model):
     def __str__(self):
         return str(self.title)
 
+    class Meta:
+        verbose_name = 'Sertifikatlar'
+        verbose_name_plural = 'Sertifikatlar'
+
 
 class VacancyModel(models.Model):
     title = models.CharField(max_length=255, null=True, blank=True)
@@ -49,5 +53,5 @@ class VacancyModel(models.Model):
         return str(self.title)
 
     class Meta:
-        verbose_name = 'Vacancies'
-        verbose_name_plural = 'Vacancies'
+        verbose_name = 'Vakansiyalar'
+        verbose_name_plural = 'Vakansiyalar'

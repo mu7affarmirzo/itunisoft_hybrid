@@ -22,6 +22,10 @@ class PartnerCategoryModel(models.Model):
     def __str__(self):
         return str(self.name)
 
+    class Meta:
+        verbose_name = 'Hamkorlar Kategoriyasi'
+        verbose_name_plural = 'Hamkorlar Kategoriyasi'
+
 
 class PartnersModel(models.Model):
     img = models.ImageField(upload_to=upload_location, blank=True, null=True)
@@ -39,6 +43,10 @@ class PartnersModel(models.Model):
     def __str__(self):
         return str(self.category.name)
 
+    class Meta:
+        verbose_name = 'Hamkorlarimiz'
+        verbose_name_plural = 'Hamkorlarimiz'
+
 
 class CarouselModel(models.Model):
     img = models.ImageField(upload_to=upload_location, blank=True, null=True)
@@ -55,6 +63,8 @@ class CarouselModel(models.Model):
 
     def __str__(self):
         return str(self.title)
+
+
 
 
 class StatsModel(models.Model):

@@ -16,16 +16,16 @@ class PartnerCategoryAdmin(PartnerCategoryCustomAdmin, TranslationAdmin):
     pass
 
 
-class InfoPageCustomAdmin(admin.ModelAdmin):
-    list_display = ('title_uz', 'title_en', 'title_ru')
-
-    class Meta:
-        verbose_name = "Info Page"
-
-
-@admin.register(home.InfoPageModel)
-class InfoPageAdmin(InfoPageCustomAdmin, TranslationAdmin):
-    pass
+# class InfoPageCustomAdmin(admin.ModelAdmin):
+#     list_display = ('title_uz', 'title_en', 'title_ru')
+#
+#     class Meta:
+#         verbose_name = "Info Page"
+#
+#
+# @admin.register(home.InfoPageModel)
+# class InfoPageAdmin(InfoPageCustomAdmin, TranslationAdmin):
+#     pass
 
 
 class StatsCustomAdmin(admin.ModelAdmin):
