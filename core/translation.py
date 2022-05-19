@@ -22,7 +22,7 @@ class InfoPageTranslationOptions(TranslationOptions):
 
 @register(PortfolioModel)
 class PortfolioTranslationOptions(TranslationOptions):
-    fields = ('title', )
+    fields = ('title', 'body')
 
 
 @register(ServicesModel)

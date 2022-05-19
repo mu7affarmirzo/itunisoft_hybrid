@@ -100,17 +100,3 @@ def main_page(request):
 
     return render(request, 'core_pages/home.html', context)
 
-#
-def project_form_view(request):
-    context = {}
-    print('Hello')
-    if request.method == 'POST':
-        form = ProjectForm(request.POST or None, request.FILES or None)
-        if form.is_valid():
-            obj = form.save(commit=False)
-            obj.save()
-            form = ProjectForm()
-            return redirect('core:home')
-        context['form'] = form
-
-    return render(request, 'core_pages/home.html', context)
