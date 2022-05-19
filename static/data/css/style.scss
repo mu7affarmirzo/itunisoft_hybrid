@@ -267,81 +267,81 @@ a {
         z-index: 1;
     }
     &-inner {
-        padding: 150px 0 50px 0;
+        padding: 150px 0;
         text-align: center;
         position: relative;
         z-index: 9;
     }
-    &-items {
-        width: 100%;
-        position: relative;
-        margin: 70px 0;
-        left: 0;
-        display: flex;
-        flex-direction: row;
-        .left,
-        .right {
-            width: 50%;
-            display: flex;
-            flex-direction: row;
-            height: 70vh;
-            a {
-                position: relative;
-                display: block;
-                transition: all 0.3s;
-                overflow: hidden;
-                height: 100%;
-                &::after {
-                    position: absolute;
-                    content: "";
-                    width: 100%;
-                    height: 100%;
-                    background: rgba($color: #000000, $alpha: 0.7);
-                    left: 0;
-                    top: 0;
-                    transition: all 0.3s;
-                }
-                &:hover::after {
-                    background: rgba($color: #000000, $alpha: 0.2);
-                }
-                &:hover img {
-                    transform: scale(1.05);
-                }
-                &:hover span {
-                    transform: translateY(-20px);
-                }
-                img {
-                    width: 100%;
-                    object-fit: cover;
-                    height: 100%;
-                    transition: all 0.3s;
-                }
-                span {
-                    position: absolute;
-                    left: 20px;
-                    bottom: 20px;
-                    color: $white_color;
-                    font-size: 20px;
-                    font-weight: bold;
-                    z-index: 3;
-                    transition: all 0.3s;
-                }
-            }
-            &-big {
-                width: 50%;
-                height: 100%;
-            }
-            &-row {
-                width: 50%;
-                display: flex;
-                height: 100%;
-                flex-direction: column;
-                a {
-                    height: 50%;
-                }
-            }
-        }
-    }
+    // &-items {
+    //     width: 100%;
+    //     position: relative;
+    //     margin: 70px 0;
+    //     left: 0;
+    //     display: flex;
+    //     flex-direction: row;
+    //     .left,
+    //     .right {
+    //         width: 50%;
+    //         display: flex;
+    //         flex-direction: row;
+    //         height: 70vh;
+    //         a {
+    //             position: relative;
+    //             display: block;
+    //             transition: all 0.3s;
+    //             overflow: hidden;
+    //             height: 100%;
+    //             &::after {
+    //                 position: absolute;
+    //                 content: "";
+    //                 width: 100%;
+    //                 height: 100%;
+    //                 background: rgba($color: #000000, $alpha: 0.7);
+    //                 left: 0;
+    //                 top: 0;
+    //                 transition: all 0.3s;
+    //             }
+    //             &:hover::after {
+    //                 background: rgba($color: #000000, $alpha: 0.2);
+    //             }
+    //             &:hover img {
+    //                 transform: scale(1.05);
+    //             }
+    //             &:hover span {
+    //                 transform: translateY(-20px);
+    //             }
+    //             img {
+    //                 width: 100%;
+    //                 object-fit: cover;
+    //                 height: 100%;
+    //                 transition: all 0.3s;
+    //             }
+    //             span {
+    //                 position: absolute;
+    //                 left: 20px;
+    //                 bottom: 20px;
+    //                 color: $white_color;
+    //                 font-size: 20px;
+    //                 font-weight: bold;
+    //                 z-index: 3;
+    //                 transition: all 0.3s;
+    //             }
+    //         }
+    //         &-big {
+    //             width: 50%;
+    //             height: 100%;
+    //         }
+    //         &-row {
+    //             width: 50%;
+    //             display: flex;
+    //             height: 100%;
+    //             flex-direction: column;
+    //             a {
+    //                 height: 50%;
+    //             }
+    //         }
+    //     }
+    // }
 }
 
 .grid-items {
@@ -499,7 +499,7 @@ a {
     }
     &-grid {
         display: flex;
-        justify-content: space-between;
+        justify-content: left;
         width: 100%;
         flex-wrap: wrap;
         img {
@@ -1111,6 +1111,7 @@ a {
 
     .portfolio-grid {
         margin-top: 20px;
+        padding: 0!important;
     }
     .grid-items .left a span,
     .grid-items .right a span {
@@ -1258,7 +1259,7 @@ a {
         width: 100%;
         height: 35vh;
         a span {
-            font-size: 14px;
+            font-size: 12px;
             text-align: left;
         }
     }
