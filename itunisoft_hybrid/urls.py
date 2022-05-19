@@ -19,14 +19,18 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.i18n import i18n_patterns
 
+admin.site.site_header = "IT UniSoft Admin"
+admin.site.site_title = "IT UniSoft Admin Portal"
+admin.site.index_title = "Welcome to IT UniSoft Admin official web-site!"
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('core.urls')),
+    path('', include('core.urls', 'main_app')),
     path('i18n/', include('django.conf.urls.i18n')),
 ]
 
 urlpatterns += i18n_patterns(
-    path('', include('core.urls')),
+    path('main/', include('core.urls')),
 )
 
 if settings.DEBUG:

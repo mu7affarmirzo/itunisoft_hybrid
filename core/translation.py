@@ -32,7 +32,7 @@ class ServiceTranslationOptions(TranslationOptions):
 
 @register(AboutInfoModel)
 class AboutInfoTranslationOptions(TranslationOptions):
-    fields = ('title', )
+    fields = ('title', 'body')
 
 
 @register(VacancyModel)

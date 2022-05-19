@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,11 +32,22 @@
             </ul>
             <ul class="nav-list nav-list-right">
                 <li>
-                    <select name="" id="">
-                        <option value=""> UZ</option>
-                        <option value=""> RU</option>
-                        <option value=""> EN</option>
-                    </select>
+                    <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+                        <input name="next" type="hidden" value="{{ redirect_to }}">
+                        <select name="language" onchange="this.form.submit()" class="lang-select">
+                            {% get_current_language as LANGUAGE_CODE %}
+                            {% get_available_languages as LANGUAGES %}
+                            {% get_language_info_list for LANGUAGES as languages %}
+
+                            {% for language in languages %}
+                                <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %} selected {% endif %}>
+                                    {{ language.name_local }} ({{ language.code }})
+                                </option>
+                            {% endfor %}
+
+                        </select>
+                    </form>
+
                 </li>
                 <li class="nav-tel-number"><a href="tel:+998999999999">(99) 999-99-99</a></li>
             </ul>
@@ -212,30 +224,30 @@
         </div>
     </section>
 
-    <section id="services-section" class="services padding-150">
-        <div class="services-inner">
-            <h1 class="section-big-text about_animation invisible">Xizmatlar ro'yxati</h1>
-
-            <div class="services-items about_animation invisible">
+    <section class="portfolio padding-150">
+    <div class="portfolio-inner">
+        <h1 class="section-big-text about_animation invisible">Xizmatlar ro'yxati</h1>
+        <div class="portfolio-grid">
+            <div class="grid-items about_animation invisible">
 
                 <div class="left">
-                        <div class="left-big">
-                            <a href="#">
-                                <img src="{{services1.imageURL}}" alt="">
-                                <span>{{ services1.title}}</span>
-                            </a>
-                        </div>
-                        <div class="left-row">
-                            <a href="#">
-                                <img src="{{services2.imageURL}}" alt="">
-                                <span>{{ services2.title}}</span>
-                            </a>
-                            <a href="#">
-                                <img src="{{services3.imageURL}}" alt="">
-                                <span>{{ services3.title }}</span>
-                            </a>
-                        </div>
+                    <div class="left-big">
+                        <a href="#">
+                            <img src="{{services1.imageURL}}" alt="">
+                            <span>{{ services1.title}}</span>
+                        </a>
                     </div>
+                    <div class="left-row">
+                        <a href="#">
+                            <img src="{{services2.imageURL}}" alt="">
+                            <span>{{ services2.title}}</span>
+                        </a>
+                        <a href="#">
+                            <img src="{{services3.imageURL}}" alt="">
+                            <span>{{ services3.title }}</span>
+                        </a>
+                    </div>
+                </div>
 
                 <div class="right">
                     <div class="left-row">
@@ -257,7 +269,8 @@
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <section class="numbers padding-150">
         <div class="numbers-inner">
