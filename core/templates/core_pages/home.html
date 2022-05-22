@@ -23,12 +23,12 @@
                 <i class="fa fa-times"></i>
             </button>
             <ul class="nav-list nav-list-center">
-                <li><a href="{% url 'core:about us' %}">Biz haqimizda</a></li>
-                <li><a href="#services-section">Xizmatlar</a></li>
-                <li><a href="{% url 'core:portfolio' %}">Loyihalarimiz</a></li>
-                <li><a href="#partners">Mijozlar</a></li>
-                <li><a href="{% url 'core:contacts' %}">Bog'lanish</a></li>
-                <li><a href="{% url 'core:vacancies' %}">Vakansiya</a></li>
+                <li><a href="{% url 'core:about us' %}">{% trans 'Biz haqimizda' %}</a></li>
+                <li><a href="#services-section">{% trans "Xizmatlar" %}</a></li>
+                <li><a href="{% url 'core:portfolio' %}">{% trans 'Loyihalarimiz' %}</a></li>
+                <li><a href="#partners">{% trans "Mijozlar" %}</a></li>
+                <li><a href="{% url 'core:contacts' %}">{% trans "Bog'lanish" %}</a></li>
+                <li><a href="{% url 'core:vacancies' %}">{% trans 'Vakansiya' %}</a></li>
             </ul>
             <ul class="nav-list nav-list-right">
                 <li>
@@ -187,16 +187,15 @@
 
             <div class="header-text">
                 <h1 class="header_animation invisible delay-1">
-                    Biznes va startaplaringiz uchun
+                    {% trans "Biznes va startaplaringiz uchun" %}
                 </h1>
                 <h1 class="header_animation invisible delay-2">
-                    <span> mobil ilovalar</span> va <span> veb-loyihalarni</span>
+                    <span> {% trans "mobil ilovalar" %}</span> {% trans "va" %} <span> {% trans "veb-loyihalarni" %}</span>
                 </h1>
                 <h1 class="header_animation invisible delay-3">
-                    ishlab chiqamiz
+                    {% trans "ishlab chiqamiz" %}
                 </h1>
-                <a class="contact-btn button-style mt-50 header_animation invisible delay-4">Ariza
-                    qoldirish</a>
+                <a class="contact-btn button-style mt-50 header_animation invisible delay-4">{% trans "Ariza qoldirish" %}</a>
             </div>
 
         </div>
