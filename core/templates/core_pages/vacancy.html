@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
+{% load i18n %}
 
 {% block content %}
     <section class="vacancy padding-150">
         <div class="vacancy-inner mt-50">
             <div class="breadcrumb-with-title">
-                <h1 class="section-big-text">Vakansiyalar</h1>
-                <p> <a href="{% url 'core:home' %}">Bosh sahifa </a> / Vakansiya</p>
+                <h1 class="section-big-text">{% trans "Vakansiyalar" %}</h1>
+                <p> <a href="{% url 'core:home' %}">{% trans "Bosh sahifa" %} </a> / {% trans "Vakansiya" %}</p>
             </div>
             <div class="vacancy-list">
                 {% for vacancy in vacancies %}

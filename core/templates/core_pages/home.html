@@ -208,7 +208,7 @@
             </div>
             <div class="right">
                 <h1 class="section-title about_animation invisible">{% trans "Biz haqimizda" %}</h1>
-                <h1 class="about_animation invisible section-big-text">{% trans "Biz raqamli yechimlar, mahsulotlar va xizmatlarni ssyaratamiz." %}</h1>
+                <h1 class="about_animation invisible section-big-text">{% trans "Biz raqamli yechimlar, mahsulotlar va xizmatlarni yaratamiz." %}</h1>
                 <p class="about_animation invisible">
                     {% trans "Hozirgi vaqtda kompaniyamiz quyidagi turdagi dasturiy ta'minotni ishlab chiqmoqda:" %}
 
@@ -442,7 +442,7 @@
 
     <div id="modal_form" class="modal-form">
         <div class="modal-body" id="modal_body">
-            <h1 class="modal-title">{% trans "Loyihangizga buyurtma bering" %}</h1>
+            <h1 class="modal-title">{% trans "Loyihangiz haqida muhokama qilish uchun kontaktingizni qoldiring" %}</h1>
             <form action="{% url 'core:home' %}" class="modal-inputs" method="post">
                 {% csrf_token %}
                 <input name="full_name" type="text" placeholder="{% trans "To'liq ismingiz" %}">

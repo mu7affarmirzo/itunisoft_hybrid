@@ -1,30 +1,31 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% block content %}
     <section class="contacts padding-150">
         <div class="contacts-inner mt-50">
             <div class="breadcrumb-with-title">
-                <h1 class="section-big-text">Biz bilan bog'lanish</h1>
-                <p> <a href="">Bosh sahifa </a> / Bog'lanish</p>
+                <h1 class="section-big-text">{% trans "Biz bilan bog'lanish" %}</h1>
+                <p> <a href="">{% trans "Bosh sahifa" %} </a> / {% trans "Bog'lanish" %}</p>
             </div>
             <div class="contacts-blocks">
                 <div class="info">
                     <p>
                         <i class="fa fa-phone"></i>
-                        <span>Telefon raqami:</span>
+                        <span>{% trans "Telefon raqami:" %}</span>
                     <p><a href="tel:">+99899 999-99-99</a></p>
                     </p>
                     <p>
                         <i class="fa fa-envelope"></i>
-                        <span>Elektron pochta:</span>
+                        <span>{% trans "Elektron pochta:" %}</span>
                     <p>
                         <a href="mailto:itunisoft@gmail.com">itunisoft@gmail.com</a>
                     </p>
                     </p>
                     <p>
                         <i class="fa fa-map"></i>
-                        <span>Manzil:</span>
+                        <span>{% trans "Manzil:" %}</span>
                     <p>
-                        100015, 14 Afrosiyob ko'chasi, <br> Toshkent shahri, O'zbekiston
+                        {% trans "100015, 14 Afrosiyob ko'chasi" %}, <br> {% trans "Toshkent shahri, O'zbekiston" %}
                     </p>
                     </p>
                 </div>

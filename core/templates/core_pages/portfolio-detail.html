@@ -1,10 +1,11 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% block content %}
     <section class="portfolios padding-150">
         <div class="portfolios-inner mt-50">
             <div class="breadcrumb-with-title">
                 <h1 class="section-big-text">{{ object.title}}</h1>
-                <p> <a href="{% url 'core:home' %}">Bosh sahifa </a> / <a href="{% url 'core:portfolio' %}"> Loyihalarimiz </a> / Unired Mobile</p>
+                <p> <a href="{% url 'core:home' %}">{% trans "Bosh sahifa" %} </a> / <a href="{% url 'core:portfolio' %}"> {% trans "Loyihalarimiz" %} </a> / {{ object.title}}</p>
             </div>
             <div class="portfolios-banner">
                 <img src="{{ object.imageURL}}" alt="">
@@ -13,7 +14,7 @@
                 <p>
                     {{ object.body }}
                 </p>
-                <a href="" class="button-style">Ilovaga o'tish</a>
+                <a href="" class="button-style">{% trans 'Batafsil' %}</a>
             </div>
         </div>
     </section>
