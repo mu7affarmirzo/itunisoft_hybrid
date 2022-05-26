@@ -207,25 +207,36 @@
                 <img src="{% static 'data/img/about-img.png' %}" alt="about-us">
             </div>
             <div class="right">
-                <h1 class="section-title about_animation invisible">Biz haqimizda</h1>
-                <h1 class="about_animation invisible section-big-text">Biz raqamli yechimlar, mahsulotlar va xizmatlarni
-                    yaratamiz.</h1>
+                <h1 class="section-title about_animation invisible">{% trans "Biz haqimizda" %}</h1>
+                <h1 class="about_animation invisible section-big-text">{% trans "Biz raqamli yechimlar, mahsulotlar va xizmatlarni
+                    yaratamiz." %}</h1>
                 <p class="about_animation invisible">
-                    IT Unisoft MChJ 2007 yilda tashkil etilgan bo'lib, bugungi kunda O'zbekistonning tizimli
-                    integratsiya bozorida IT-mahsulotlar, yechimlar va xizmatlarning yetakchi yetkazib beruvchisi
-                    hisoblanadi. Kompaniyaning yechimlar va xizmatlar portfeli har qanday hajmdagi korxona va
-                    tashkilotlarda axborot texnologiyalarining to‘liq hayot siklini qamrab oladi - loyihalar bo‘yicha
-                    konsalting, IT-infratuzilmasini kompleks qurish va dasturiy yechimlarni ishlab chiqarishdan tortib
-                    SMM marketing xizmatlarigacha.
+                    {% trans "Hozirgi vaqtda kompaniyamiz quyidagi turdagi dasturiy ta'minotni ishlab chiqmoqda:" %}
+
+                    <ul>
+                        <li>
+                            {% trans "To'lovlarni monitoring qilish dasturi" %}
+                        </li>
+                        <li>
+                            {% trans "Kredit karta monitoringi dasturi" %}
+                        </li>
+                        <li>
+                            {% trans "Muddatli to'lov kartasi - UNIRED" %}
+                        </li>
+                        <li>
+                            {% trans "Hamkorlar va davlat idoralari bilan eksklyuziv IT yechimlari" %}
+                        </li>
+                    </ul>
+
                 </p>
-                <a href="" class="button-style mt-50 about_animation invisible contact-btn">Biz bilan bog'lanish</a>
+                <a href="{% url 'core:about us' %}" class="button-style mt-50 about_animation invisible ">{% trans 'Batafsil' %}</a>
             </div>
         </div>
     </section>
 
     <section id="services-section" class="services padding-150">
         <div class="services-inner">
-            <h1 class="section-big-text about_animation invisible">Xizmatlar ro'yxati</h1>
+            <h1 class="section-big-text about_animation invisible">{% trans "Xizmatlar ro'yxati" %}</h1>
 
             <div class="portfolio-grid padding-150">
                 <div class="grid-items about_animation invisible">
@@ -272,7 +283,7 @@
 
     <section class="numbers padding-150">
         <div class="numbers-inner">
-            <h1 class="section-big-text about_animation invisible mb-50">Kompaniya raqamlarda</h1>
+            <h1 class="section-big-text about_animation invisible mb-50">{% trans "Kompaniya raqamlarda" %}</h1>
             <div class="counter-elements invisible mb-50">
 
                 {% for stat in stats %}
@@ -288,12 +299,12 @@
 
     <section class="portfolio padding-150">
         <div class="portfolio-inner">
-            <h1 class="section-big-text about_animation invisible">Bizning ishlar</h1>
+            <h1 class="section-big-text about_animation invisible">{% trans "Bizning ishlar" %}</h1>
             <div class="portfolio-title">
-                <p class="section-text about_animation invisible">Biz asosiy e'tiborni qiymat keltirishga va biznesning
-                    <br> asosiy muammolarini hal qilishga qaratamiz
+                <p class="section-text about_animation invisible">{% trans "Biz asosiy e'tiborni qiymat keltirishga va biznesning" %}
+                    <br> {% trans "asosiy muammolarini hal qilishga qaratamiz" %}
                 </p>
-                <a href="{% url 'core:portfolio' %}" class="about_animation invisible button-style">Barchasini ko'rish</a>
+                <a href="{% url 'core:portfolio' %}" class="about_animation invisible button-style">{% trans "Barchasini ko'rish" %}</a>
             </div>
             <div class="portfolio-grid">
                 <div class="grid-items about_animation invisible">
@@ -342,7 +353,7 @@
 
     <section class="partners padding-150" id="partners">
         <div class="partners-inner">
-            <h1 class="section-big-text about_animation invisible mb-50">Bizning mijozlarimiz</h1>
+            <h1 class="section-big-text about_animation invisible mb-50">{% trans "Bizning mijozlarimiz" %}</h1>
             <div id="tabs">
                 <ul>
                     {% for category in categories %}
@@ -371,11 +382,10 @@
                 <li>
                     <img src="{% static 'data/img/logo-light.svg' %}" alt="">
                     <p>
-                        Yuridik manzil: 100015, 14 Afrosiyob ko'chasi, Mirobod tumani, Toshkent shahri , O'zbekiston
+                        {% trans "Yuridik manzil: 100015, 14 Afrosiyob ko'chasi, Mirobod tumani, Toshkent shahri , O'zbekiston" %}
                     </p>
                 </li>
                 <li>
-                    <p>Bizni ijtimoiy tarmoqlarda kuzatib boring:</p>
                     <ul class="social-items">
                         <li>
                             <a href="">
@@ -420,27 +430,27 @@
                 </li>
                 <li class="footer-contacts">
                     <p>
-                        Aloqa uchun:
+                        {% trans "Aloqa uchun:" %}
                     </p>
                     <a href="" class="footer-contact">+998 99 999 99 98</a>
                     <a href="" class="footer-contact">+998 99 999 99 98</a>
                 </li>
             </ul>
             <span class="horizontal-line"></span>
-            <p class="footer-sub">IT Unisoft © 2022. Barcha huquqlar himoyalangan.</p>
+            <p class="footer-sub">{% trans "IT Unisoft © 2022. Barcha huquqlar himoyalangan." %}</p>
         </div>
     </footer>
 
     <div id="modal_form" class="modal-form">
         <div class="modal-body" id="modal_body">
-            <h1 class="modal-title">Loyihangizga buyurtma bering</h1>
+            <h1 class="modal-title">{% trans "Loyihangizga buyurtma bering" %}</h1>
             <form action="{% url 'core:home' %}" class="modal-inputs" method="post">
                 {% csrf_token %}
-                <input name="full_name" type="text" placeholder="To'liq ismingiz">
-                <input name="phone_number" type="text" id="phone-number" placeholder="Telefon raqami">
-                <input name="email" type="email" placeholder="Elektron pochta">
-                <textarea name="message" id="" placeholder="Xabar"></textarea>
-                <button type="submit" class="button-style">Yuborish</button>
+                <input name="full_name" type="text" placeholder="{% trans "To'liq ismingiz" %}">
+                <input name="phone_number" type="text" id="phone-number" placeholder="{% trans "Telefon raqami" %}">
+                <input name="email" type="email" placeholder="{% trans "Elektron pochta" %}">
+                <textarea name="message" id="" placeholder="{% trans "Xabar" %}"></textarea>
+                <button type="submit" class="button-style">{% trans "Yuborish" %}</button>
             </form>
         </div>
     </div>

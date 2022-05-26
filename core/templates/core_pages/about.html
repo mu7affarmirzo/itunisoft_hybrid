@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% block content %}
 
     <section class="about padding-150">
         <div class="about-inner mt-50">
             <div class="breadcrumb-with-title">
-                <h1 class="section-big-text">Biz haqimizda</h1>
-                <p> <a href="{% url 'core:home' %}">Bosh sahifa </a> / Biz haqimizda</p>
+                <h1 class="section-big-text">{% trans "Biz haqimizda" %}</h1>
+                <p> <a href="{% url 'core:home' %}">{% trans "Bosh sahifa" %} </a> / {% trans "Biz haqimizda" %}</p>
             </div>
             {% for info in informations %}
                 <h1 class="inner-section-title">{{ info.title}}</h1>
@@ -13,7 +14,7 @@
             {% endfor %}
 
 
-            <h1 class="inner-section-title">Bizning mijozlarimiz</h1>
+            <h1 class="inner-section-title">{% trans 'Bizning mijozlar' %}</h1>
 
         <div id="tabs">
             <ul>
@@ -34,7 +35,7 @@
         </div>
 
 
-        <h1 class="inner-section-title">Sertifikatlar va litsenziyalar</h1>
+        <h1 class="inner-section-title">{% trans "Sertifikatlar va litsenziyalar" %}</h1>
         <div class="about-certificates">
             {% for certificate in certificates %}
                 <img src="{{ certificate.imageURL }}" alt="">
