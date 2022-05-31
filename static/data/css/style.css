@@ -59,7 +59,7 @@ a {
 
 .nav-list-center li a {
   color: #333333;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
   position: relative;
 }
@@ -1633,7 +1633,7 @@ a {
   .mt-50 {
     margin-top: 30px;
   }
-  .about-inner, .contacts-inner {
+  .about-inner, .contacts-inner, .portfolios-inner, .vacancy-inner {
     margin: 100px 0;
   }
   .contacts .info p {

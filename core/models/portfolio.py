@@ -1,3 +1,4 @@
+from ckeditor.fields import RichTextField
 from django.db import models
 from core.models.home import upload_location
 
@@ -5,7 +6,7 @@ from core.models.home import upload_location
 class PortfolioModel(models.Model):
     img = models.ImageField(upload_to=upload_location, blank=True, null=True)
     title = models.CharField(max_length=255)
-    body = models.TextField()
+    body = RichTextField()
 
     @property
     def imageURL(self):
